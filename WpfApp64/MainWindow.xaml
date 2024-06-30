@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfApp64.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp64"
+        mc:Ignorable="d"
+        Title="ОСАГО Калькулятор" Height="400" Width="600">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Тип ТС:" Margin="0,10,10,0" VerticalAlignment="Center" />
+        <ComboBox x:Name="VehicleType" Grid.Row="0" Grid.Column="1" Margin="0,10,0,0" SelectedIndex="0">
+            <ComboBoxItem>Мотоциклы, мотороллеры (категории А)</ComboBoxItem>
+            <ComboBoxItem>Легковые автомобили (категории В)</ComboBoxItem>
+            <ComboBoxItem>Грузовые автомобили (категории С)</ComboBoxItem>
+        </ComboBox>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Регион:" Margin="0,10,10,0" VerticalAlignment="Center" />
+        <ComboBox x:Name="Region" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" SelectedIndex="0">
+            <ComboBoxItem>Пенза</ComboBoxItem>
+            <ComboBoxItem>Кузнецк</ComboBoxItem>
+            <ComboBoxItem>Прочие города Пензенской области</ComboBoxItem>
+            <ComboBoxItem>Сызрань</ComboBoxItem>
+            <ComboBoxItem>Самара</ComboBoxItem>
+            <ComboBoxItem>Тольятти</ComboBoxItem>
+            <ComboBoxItem>Прочие города Самарской области</ComboBoxItem>
+            <ComboBoxItem>Димитровград</ComboBoxItem>
+            <ComboBoxItem>Ульяновск</ComboBoxItem>
+            <ComboBoxItem>Прочие города Ульяновской области</ComboBoxItem>
+        </ComboBox>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Возраст водителя:" Margin="0,10,10,0" VerticalAlignment="Center" />
+        <TextBox x:Name="Age" Grid.Row="2" Grid.Column="1" Margin="0,10,0,0"  />
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Стаж вождения:" Margin="0,10,10,0" VerticalAlignment="Center" />
+        <TextBox x:Name="Experience" Grid.Row="3" Grid.Column="1" Margin="0,10,0,0" />
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Мощность ТС (л.с.):" Margin="0,10,10,0" VerticalAlignment="Center" />
+        <TextBox x:Name="Power" Grid.Row="4" Grid.Column="1" Margin="0,10,0,0"  />
+
+        <Button x:Name="Calculate" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Рассчитать" Margin="0,20,0,0" Click="Calculate_Click" />
+
+        <TextBlock x:Name="Result" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,0" TextAlignment="Center" FontSize="18" FontWeight="Bold" />
+    </Grid>
+</Window>
